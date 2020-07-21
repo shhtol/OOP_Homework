@@ -37,7 +37,7 @@ class Parallelogram : public Figure {
 class Circle : public Figure {
     private:
     float radius;
-    float PI = 3.14;
+    const float PI = 3.14;
     public:
     Circle (float r) {
         radius = r;
