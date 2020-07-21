@@ -10,7 +10,7 @@ class Figure {
   
 };
 
-class Parallelogram : virtual public Figure {
+class Parallelogram : public Figure {
     protected:
     float width;
     float length;
@@ -34,7 +34,7 @@ class Parallelogram : virtual public Figure {
     }
 };
 
-class Circle : virtual public Figure {
+class Circle : public Figure {
     private:
     float radius;
     float PI = 3.14;
