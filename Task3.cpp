@@ -49,36 +49,33 @@ class Fraction {
     }
         
     
-    bool operator<(const Fraction &f1) {
-        if((numerator / denominator) < (f1.numerator / f1.denominator)) return true;
+    friend bool operator<(const Fraction &f1, const Fraction &f2) {
+        if((f1.numerator / f1.denominator) < (f2.numerator / f2.denominator)) return true;
         else return false;
     }
     
-    bool operator>(const Fraction &f1) {
-         if((numerator / denominator) < (f1.numerator / f1.denominator)) return false;
-        else return true;
-    }
-    
-    bool operator<=(const Fraction &f1) {
-        if((numerator / denominator) <= (f1.numerator / f1.denominator)) return true;
+    friend bool operator>(const Fraction &f1, const Fraction &f2) {
+         if((f1.numerator / f1.denominator) > (f2.numerator / f2.denominator)) return true;
         else return false;
     }
     
-    bool operator>=(const Fraction &f1) {
-        if((numerator / denominator) <= (f1.numerator / f1.denominator)) return false;
-        else return true;
+    friend bool operator<=(const Fraction &f1, const Fraction &f2) {
+        return !(f1>f2);
+    }
+    
+    friend bool operator>=(const Fraction &f1, const Fraction &f2) {
+        return !(f1<f2);
     } 
     
-    bool operator==(const Fraction &f2)
+    friend bool operator==(const Fraction &f1, const Fraction &f2)
     {
-    return (numerator == f2.numerator &&
-            denominator == f2.denominator);
+    return (f1.numerator == f2.numerator &&
+            f1.denominator == f2.denominator);
     }
  
-    bool operator!=(const Fraction &f2)
+    friend bool operator!=(const Fraction &f1, const Fraction &f2)
     {
-    return (numerator != f2.numerator ||
-            denominator != f2.denominator);
+    return !(f1==f2);
     }
 };
 int main()
