@@ -1,16 +1,25 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
+
+bool is_digit(string s) {
+    for(auto ch : s){
+        if(!isdigit(ch)) return false;
+    }
+    return true;
+}
 
 int main()
 {
-    int n;
+    string n;
+   
+    do{ 
     cout<<"Enter the number: ";
-    while(!(cin >> n)){
-        cout << "Not a number, try again: " << endl;
-        cin.clear();
-        cin.ignore(100, '\n');
+    cin >> n;
     }
+    while(!is_digit(n));
     cout << "Number is " << n << endl;
+
     return 0;
 }
+
