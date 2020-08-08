@@ -27,6 +27,8 @@ class Date {
      
      if(d1->getDay() > d2->getDay ()) return *d1;
      else if(d1->getDay() < d2->getDay ()) return *d2;
+  
+     return *d1;
      
  } 
  
