@@ -2,7 +2,7 @@
 
 using namespace std;
 
-double divide(int a, int b) {
+double divide(double a, double b) {
     if (b == 0) {
         throw "DivisionByZero";
     }
